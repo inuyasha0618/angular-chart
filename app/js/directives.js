@@ -9,12 +9,11 @@ angular.module('myApp.directives',['myApp.services']).
 	directive('gChart',function(){
 		return{
 			link: function(scope,elem,attrs){
+				console.log("创建g-chart指令");
 				var myChart;
 				var count = 0;
-				console.log(elem[0].width + " " + elem[0].height);
 				scope.$watch('currentType',function(){
 					++count;
-					console.log(count);
 					var type = scope.currentType.typeNum;
 					if(type == 1){
 						if(count != 1)

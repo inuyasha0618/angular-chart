@@ -3,13 +3,18 @@
 <head>
   <meta charset="utf-8">
   <title>My AngularJS App</title>
+  <style>
+   #box{width: 800px;height: 450px;margin: 0 auto;border: 1px #ccc solid;}
+  </style>
 </head>
-<body ng-controller="MyCtrl1">
-  <select ng-model="currentType" ng-options="ct.typeName for ct in chartTypes"></select>
-  <canvas width='600' height='400' g-chart></canvas>
+<body>
+  <div id="box" ng-view></div>
   <div>当前软件版本为<span app-version></span></div>
+  <a href="#graph-view">图表页</a>
+  <a href="#edit-view">编辑页</a>
   <script src="lib/Chart.min.js"></script> 
   <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/angular/angular-route.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>
