@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+</head>
+<body ng-controller="MyCtrl1">
+  <select ng-model="currentType" ng-options="ct.typeName for ct in chartTypes"></select>
+  <canvas width='600' height='400' g-chart></canvas>
+  <div>当前软件版本为<span app-version></span></div>
+  <script src="lib/Chart.min.js"></script> 
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/directives.js"></script>
+</body>
+</html>
