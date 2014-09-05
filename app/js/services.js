@@ -16,4 +16,10 @@ angular.module('myApp.services',[])
 			return $http({method: 'GET',url: '/data/' + id})
 		}
 	}
-});
+}).factory('delData',function($http){
+	return {
+		delete: function(id){
+			return $http.delete('/data/' + id);
+		}
+	}
+})

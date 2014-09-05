@@ -41,6 +41,16 @@ app.get('/data/:id',function(req,res){
 	})
 })
 
+app.delete('/data/:id',function(req,res){
+	datasetModel.remove({_id:req.params.id},function(err,data){
+		if(err) return console.log(err);
+		datasetModel.find(function(err,data){
+			if(err) return console.log(err);
+			res.json(data);
+		})
+	})
+})
+
 app.post('/data/new',function(req,res){
 	var item = new datasetModel(req.body);
 	var id = item._id;

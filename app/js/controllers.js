@@ -19,11 +19,16 @@ angular.module('myApp.controllers', ['myApp.services'])
             $location.path('/graph-view');
           })
         }
-    }]).controller('listCtrl',['$scope','getData',function($scope,getData){
+    }]).controller('listCtrl',['$scope','getData','delData',function($scope,getData,delData){
         $scope.items = []; 
         getData.fetch().success(function(dts){
           $scope.items = dts;
         })
+        $scope.removeItem = function(id){
+          delData.delete(id).success(function(dts){
+            $scope.items = dts;
+          })
+        }
     }]).controller('editCtrl',['$scope','$routeParams','$location','getData','postData',function($scope,$routeParams,$location,getData,postData){
         $scope.isHided = true;
         $scope.btnText = "保存修改";
