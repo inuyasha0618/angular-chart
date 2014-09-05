@@ -6,12 +6,21 @@
   "dependencies": {
     "body-parser": "^1.7.0",
     "express": "^4.8.7",
-    "method-override": "^2.2.0"
+    "method-override": "^2.2.0",
+    "mongoose": "^3.8.15"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "tie cheng",
-  "license": "ISC" 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/inuyasha0618/angular-chart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inuyasha0618/angular-chart/issues"
+  },
+  "homepage": "https://github.com/inuyasha0618/angular-chart"
 }
