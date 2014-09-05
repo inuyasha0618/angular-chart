@@ -52,7 +52,8 @@ app.delete('/data/:id',function(req,res){
 })
 
 app.post('/data/new',function(req,res){
-	var item = new datasetModel(req.body);
+	// var item = new datasetModel(req.body);
+	var item = req.body;
 	var id = item._id;
 	if(id != undefined){
 		var update = {};
@@ -69,7 +70,7 @@ app.post('/data/new',function(req,res){
 			res.json({"status":"success"});
 		})
 	}else{
-		item.save(function(err,newItem){
+		new datasetModel(item).save(function(err,newItem){
 			if(err) return console.log(err);
 			res.json({"status":"success"});
 		})
