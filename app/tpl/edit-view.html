@@ -1,14 +1,65 @@
 <h1>This is the edit view!!!</h1>
-<label for="">项目名</label><input ng-model="dataToPost.label" type="text">
-<label for="">填充色</label><input ng-model="dataToPost.fillColor" type="text">
-<label for="">线条色</label><input ng-model="dataToPost.strokeColor" type="text">
-<label for="">点颜色</label><input ng-model="dataToPost.pointColor" type="text">
-<label for="">点轮廓色</label><input ng-model="dataToPost.pointStrokeColor" type="text">
-<label for="">Jan</label><input ng-model="dataToPost.data[0]" type="text">
-<label for="">Feb</label><input ng-model="dataToPost.data[1]" type="text">
-<label for="">Mar</label><input ng-model="dataToPost.data[2]" type="text">
-<label for="">Apr</label><input ng-model="dataToPost.data[3]" type="text">
-<label for="">May</label><input ng-model="dataToPost.data[4]" type="text">
-<label for="">Jun</label><input ng-model="dataToPost.data[5]" type="text">
-<label for="">Jul</label><input ng-model="dataToPost.data[6]" type="text">
-<button ng-click="gotoGraph()">另一种方式返回图表页</button>
+<form class="form-horizontal">
+	<div class="form-group">
+		<label for="" class="control-label col-md-2">项目名</label>
+		<div class="col-md-10">
+			<input class="form-control" ng-model="dataToPost.label" type="text">
+		</div>		
+	</div>
+	<div class="form-group">
+		<label for="" class="control-label col-md-2">填充色</label>
+		<div class="col-md-10">
+			<input class="form-control" ng-model="dataToPost.fillColor" type="text">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-2" for="">线条色</label>
+		<div class="col-md-10">
+			<input class="form-control" ng-model="dataToPost.strokeColor" type="text">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-2" for="">点颜色</label>
+		<div class="col-md-10">
+			<input class="form-control" ng-model="dataToPost.pointColor" type="text">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-2" for="">点轮廓色</label>
+		<div class="col-md-10">
+			<input class="form-control" ng-model="dataToPost.pointStrokeColor" type="text">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="control-label col-md-2">各月数据</label>
+		<div class="col-md-2">
+			<input class="form-control" placeholder="January" ng-model="dataToPost.data[0]" type="text">
+		</div>
+		<div class="col-md-2">
+			<input class="form-control" placeholder="February" ng-model="dataToPost.data[1]" type="text">
+		</div>
+		<div class="col-md-2">
+			<input class="form-control" placeholder="March" ng-model="dataToPost.data[2]" type="text">
+		</div>
+		<div class="col-md-2">
+			<input class="form-control" placeholder="April" ng-model="dataToPost.data[3]" type="text">
+		</div>
+		<div class="col-md-2">
+			<input class="form-control" placeholder="May" ng-model="dataToPost.data[4]" type="text">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-2 col-md-offset-2">
+			<input class="form-control" placeholder="June" ng-model="dataToPost.data[5]" type="text">
+		</div>
+		<div class="col-md-2">
+			<input class="form-control" placeholder="July" ng-model="dataToPost.data[6]" type="text">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-10 col-md-offset-2">
+			<button class="btn btn-primary" ng-click="gotoGraph()">保存并返回图表页</button>
+			<a class="btn btn-default" href="#graph-view">不保存直接返回</a>
+		</div>
+	</div>
+</form>

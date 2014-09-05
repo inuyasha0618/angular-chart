@@ -1,5 +1,5 @@
 angular.module('myApp.services',[])
-.value('version','0.2')
+.value('version','0.4')
 .factory('postData',function($http){
 	return {
 		post: function(dt){

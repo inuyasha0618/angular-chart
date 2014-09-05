@@ -1,2 +1,13 @@
-<select ng-model="currentType" ng-options="ct.typeName for ct in chartTypes"></select>
-<canvas width='600' height='400' g-chart></canvas>
+<div class="row">
+	<div class="col-md-2 col-md-offset-2">
+		<select class="form-control" ng-model="currentType" ng-options="ct.typeName for ct in chartTypes"></select>
+	</div>
+	<div class="col-md-2">
+		<a class="btn btn-primary" href="#edit-view">编辑页</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-10 col-md-offset-2">
+		<canvas width='600' height='400' g-chart></canvas>
+	</div>
+</div>

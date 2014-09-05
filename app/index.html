@@ -2,16 +2,15 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="./style/bootstrap.min.css">
   <title>My AngularJS App</title>
-  <style>
-   #box{width: 800px;height: 450px;margin: 0 auto;border: 1px #ccc solid;}
-  </style>
 </head>
 <body>
-  <div id="box" ng-view></div>
-  <div>当前软件版本为<span app-version></span></div>
-  <a href="#graph-view">图表页</a>
-  <a href="#edit-view">编辑页</a>
+  <div class="container" ng-view></div>
+  <div class="container">
+      <h3>当前软件版本为<small app-version></small></h3>
+  </div>
   <script src="lib/Chart.min.js"></script> 
   <script src="lib/angular/angular.min.js"></script>
   <script src="lib/angular/angular-route.min.js"></script>
