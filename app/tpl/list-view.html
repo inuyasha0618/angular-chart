@@ -1,0 +1,26 @@
+	<table style="margin: 50px auto 0;">
+		<thead>
+			<tr>
+				<th>项目名</th>
+				<th>填充色</th>
+				<th>线条色</th>
+				<th>点颜色</th>
+				<th>点轮廓色</th>
+				<th>各月数据</th>
+				<th>编辑</th>
+				<th>删除</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in items">
+				<td>{{item.label}}</td>
+				<td>{{item.fillColor}}</td>
+				<td>{{item.strokeColor}}</td>
+				<td>{{item.pointColor}}</td>
+				<td>{{item.pointStrokeColor}}</td>
+				<td>{{item.data}}</td>
+				<td><a href="#edit-view/{{item._id}}" class="btn btn-primary">编辑</a></td>
+				<td><button class="btn btn-danger">删除</button></td>
+			</tr>
+		</tbody>
+	</table>

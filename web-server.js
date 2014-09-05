@@ -32,10 +32,36 @@ app.get('/data',function(req,res){
 	});
 });
 
-app.post('/data',function(req,res){
-	var newItem = new datasetModel(req.body);
-	newItem.save(function(err,newItem){
-		if(err) return console.log(err);
-		res.json({"status":"success"});
+app.get('/data/:id',function(req,res){
+	datasetModel.findOne({_id:req.params.id},function(err,data){
+		if(err){
+			return res.send(err);
+		}
+		res.json(data);
 	})
+})
+
+app.post('/data/new',function(req,res){
+	var item = new datasetModel(req.body);
+	var id = item._id;
+	if(id != undefined){
+		var update = {};
+		update.label = item.label;
+		update.fillColor = item.fillColor;
+		update.strokeColor = item.strokeColor;
+		update.pointColor = item.pointColor;
+		update.pointStrokeColor = item.pointStrokeColor;
+		update.data = item.data;
+		
+		datasetModel.update({_id:id},update,function(err,num){
+			if (err) {return console.log(err)};
+			console.log("完成更新数："+num);
+			res.json({"status":"success"});
+		})
+	}else{
+		item.save(function(err,newItem){
+			if(err) return console.log(err);
+			res.json({"status":"success"});
+		})
+	}
 });

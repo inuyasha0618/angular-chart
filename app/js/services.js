@@ -3,7 +3,7 @@ angular.module('myApp.services',[])
 .factory('postData',function($http){
 	return {
 		post: function(dt){
-			return $http({method: 'POST',url: '/data',data: dt});
+			return $http({method: 'POST',url: '/data/new',data: dt});
 		}
 	}
 })
@@ -11,6 +11,9 @@ angular.module('myApp.services',[])
 	return {
 		fetch: function(){
 			return $http({method: 'GET',url: '/data'});
+		},
+		getById: function(id){
+			return $http({method: 'GET',url: '/data/' + id})
 		}
 	}
 });

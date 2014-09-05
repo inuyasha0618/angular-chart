@@ -7,14 +7,33 @@ angular.module('myApp.controllers', ['myApp.services'])
             datasets : []
           }
       }
-    ]).controller('editCtrl',['$scope','$location','postData',function($scope,$location,postData){
+    ]).controller('addNewCtrl',['$scope','$location','postData',function($scope,$location,postData){
         console.log("创建编辑页");
         $scope.dataToPost = {};
         $scope.dataToPost.data = new Array(7);
 
+        $scope.isHided = false;
+        $scope.btnText = "向数据库添加新数据";
         $scope.gotoGraph = function(){
           postData.post($scope.dataToPost).success(function(){
             $location.path('/graph-view');
           })
         }
-    }]);
+    }]).controller('listCtrl',['$scope','getData',function($scope,getData){
+        $scope.items = []; 
+        getData.fetch().success(function(dts){
+          $scope.items = dts;
+        })
+    }]).controller('editCtrl',['$scope','$routeParams','$location','getData','postData',function($scope,$routeParams,$location,getData,postData){
+        $scope.isHided = true;
+        $scope.btnText = "保存修改";
+        var id = $routeParams.id;
+        getData.getById(id).success(function(data){
+          $scope.dataToPost = data;
+        })
+        $scope.gotoGraph = function(){
+          postData.post($scope.dataToPost).success(function(){
+            $location.path('/graph-view');
+          })
+        }
+    }])
