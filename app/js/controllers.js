@@ -1,14 +1,14 @@
 angular.module('myApp.controllers', ['myApp.services'])
   .controller('graphCtrl', ['$scope','getData',
       function($scope,getData) {
-        console.log("创建图表页");
+        $scope.pageClass = 'page-main';
         $scope.data = {
             labels : ["January","February","March","April","May","June","July"],
             datasets : []
           }
       }
     ]).controller('addNewCtrl',['$scope','$location','postData',function($scope,$location,postData){
-        console.log("创建编辑页");
+        $scope.pageClass = 'page-edit';
         $scope.dataToPost = {};
         $scope.dataToPost.data = new Array(7);
 
@@ -20,6 +20,7 @@ angular.module('myApp.controllers', ['myApp.services'])
           })
         }
     }]).controller('listCtrl',['$scope','getData','delData',function($scope,getData,delData){
+        $scope.pageClass = 'page-list';
         $scope.items = []; 
         getData.fetch().success(function(dts){
           $scope.items = dts;
@@ -30,6 +31,7 @@ angular.module('myApp.controllers', ['myApp.services'])
           })
         }
     }]).controller('editCtrl',['$scope','$routeParams','$location','getData','postData',function($scope,$routeParams,$location,getData,postData){
+        $scope.pageClass = 'page-edit';
         $scope.isHided = true;
         $scope.btnText = "保存修改";
         var id = $routeParams.id;
