@@ -4,8 +4,8 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
+    background-color: #fff;
 }
-
 @-webkit-keyframes rotateFall {
     0%         { -webkit-transform: rotateZ(0deg); }
     20%     { -webkit-transform: rotateZ(10deg); animation-timing-function: ease-out; }
@@ -15,8 +15,8 @@
 }
 
 /* slide in from the bottom */
-@-webkit-keyframes slideOutLeft
-    to         { -webkit-transform: -webkit-translateX(-100%); }
+@-webkit-keyframes slideOutLeft {
+    to         { -webkit-transform: translateX(-100%); }
 }
 
 /* rotate out newspaper */
@@ -27,7 +27,7 @@
 /* entering animations --------------------------------------- */
 /* scale up */
 @-webkit-keyframes scaleUp {
-    from     { opacity: 0.3; -webkit-transform: scale(0.8); }
+    from     { /*opacity: 0.3*/; -webkit-transform: scale(0.8); }
 }
 
 /* slide in from the right */
@@ -41,6 +41,7 @@
     from     { -webkit-transform:translateY(100%); }
     to         { -webkit-transform: translateY(0); }
 }
+
 
 @keyframes rotateFall {
     0%         { transform: rotateZ(0deg); }
@@ -89,5 +90,5 @@
 .page-list.ng-leave        { animation:slideOutLeft 0.5s both ease-in; -webkit-animation:slideOutLeft 0.5s both ease-in; }
 
 /* contact ---------------------- */
-.page-edit.ng-leave      { transform-origin: 50% 50%; animation: rotateOutNewspaper .5s both ease-in;-webkit-transform-origin: 50% 50%; -webkit-animation: rotateOutNewspaper .5s both ease-in; }
+.page-edit.ng-leave      { transform-origin: 50% 50%; animation: rotateOutNewspaper .5s both ease-in;-webkit-animation: rotateOutNewspaper .5s both ease-in; }
 .page-edit.ng-enter         { animation:slideInUp 0.5s both ease-in; -webkit-animation:slideInUp 0.5s both ease-in; }
